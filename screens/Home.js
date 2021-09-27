@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, Button, FlatList, TouchableOpacity,} from 'react-native';
+import {StyleSheet, View, Text, Button, FlatList} from 'react-native';
 import TodoItem from "../components/TodoItem";
 
 export default function Home({navigation}) {
