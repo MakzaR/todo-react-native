@@ -11,14 +11,13 @@ export default function DrawerNavigator() {
         <Drawer.Navigator
             screenOptions={{
                 headerShown: false
-            }}
-        >
+            }}>
             <Drawer.Screen
-                name="Todos"
+                name='TodosDrawer'
                 component={HomeStack}
             />
             <Drawer.Screen
-                name="About"
+                name='AboutDrawer'
                 component={AboutStack}
             />
         </Drawer.Navigator>
