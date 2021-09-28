@@ -1,13 +1,18 @@
 import React from 'react';
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import {NavigationContainer} from "@react-navigation/native";
+import {MaterialIcons} from "@expo/vector-icons";
 
 import Home from "../screens/Home";
 import TodoDetails from "../screens/TodoDetails";
 
 const Stack = createNativeStackNavigator();
 
-export default function HomeStack() {
+export default function HomeStack({ navigation }) {
+
+    const openMenu = () => {
+        navigation.openDrawer();
+    }
+
     return (
         <Stack.Navigator
             screenOptions={{
@@ -21,7 +26,10 @@ export default function HomeStack() {
                 name={'Home'}
                 component={Home}
                 options={{
-                    title: 'Todos'
+                    title: 'Todos',
+                    headerLeft: () => (
+                        <MaterialIcons name='menu' size={24} color='white' onPress={openMenu}/>
+                    )
                 }}
             />
             <Stack.Screen

@@ -1,11 +1,17 @@
 import React from 'react';
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {MaterialIcons} from "@expo/vector-icons";
 
 import About from "../screens/About";
 
 const Stack = createNativeStackNavigator();
 
-export default function AboutStack() {
+export default function AboutStack({ navigation }) {
+
+    const openMenu = () => {
+        navigation.openDrawer();
+    }
+
     return (
         <Stack.Navigator
             screenOptions={{
@@ -19,7 +25,9 @@ export default function AboutStack() {
                 name={'About'}
                 component={About}
                 options={{
-                    title: 'Just About'
+                    headerLeft: () => (
+                        <MaterialIcons name='menu' size={24} color='white' onPress={openMenu}/>
+                    )
                 }}
             />
         </Stack.Navigator>
